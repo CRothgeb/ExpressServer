@@ -51,7 +51,7 @@ partnerRouter.route('/:partnerId')
     })
     .post((req, res) => {
         res.statusCode = 403;
-        res.end(`POST operation not supported on /campsites/${req.params.partnerId}`);
+        res.end(`POST operation not supported on /partner/${req.params.partnerId}`);
     })
     .put((req, res, next) => {
         Partner.findByIdAndUpdate(req.params.partnerId, {
@@ -60,7 +60,7 @@ partnerRouter.route('/:partnerId')
             .then(partner => {
                 res.statusCode = 200;
                 res.setHeader('Content-Type', 'application/json');
-                res.json(campsite);
+                res.json(partner);
             })
             .catch(err => next(err));
     })
