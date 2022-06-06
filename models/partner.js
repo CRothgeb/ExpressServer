@@ -4,12 +4,11 @@ const Schema = mongoose.Schema;
 const partnerSchema = new Schema({
     name: {
         type: String,
-        required: true,
-        unique: true
+        required: true
     },
     image: {
         type: String,
-        required: true,
+        required: true
     },
     featured: {
         type: Boolean,
@@ -19,9 +18,10 @@ const partnerSchema = new Schema({
         type: String,
         required: true
     }
-}, {
-    timestamps: true
-});
+},
+    {
+        timestamps: true
+    });
 
 const Partner = mongoose.model('Partner', partnerSchema);
 
